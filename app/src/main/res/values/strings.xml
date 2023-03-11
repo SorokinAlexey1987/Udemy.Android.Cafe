@@ -7,4 +7,5 @@
     <string name="greetings">Привет, %s! Что желаете?</string>
     <string name="tea">Чай</string>
     <string name="coffee">Кофе</string>
+    <string name="additives">Что добавить в ваш %s</string>
 </resources>
