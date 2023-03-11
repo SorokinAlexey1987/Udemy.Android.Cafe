@@ -112,6 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:entries="@array/types_of_tea"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/buttonMakeOrder"
         app:layout_constraintTop_toBottomOf="@+id/textViewDrinkType" />
 
@@ -121,9 +122,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:entries="@array/types_of_coffee"
-        android:visibility="gone"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/buttonMakeOrder"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDrinkType" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewDrinkType"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/buttonMakeOrder"
