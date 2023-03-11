@@ -12,6 +12,7 @@
     <string name="milk">Молоко</string>
     <string name="lemon">Лимон</string>
     <string name="choose_drink_type">Выберите тип напитка</string>
+    <string name="make_order">Сделать заказ</string>
 
     <array name="types_of_tea">
         <item>Зелёный</item>
