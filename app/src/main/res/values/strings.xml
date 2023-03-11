@@ -8,4 +8,7 @@
     <string name="tea">Чай</string>
     <string name="coffee">Кофе</string>
     <string name="additives">Что добавить в ваш %s</string>
+    <string name="sugar">Сахар</string>
+    <string name="milk">Молоко</string>
+    <string name="lemon">Лимон</string>
 </resources>
