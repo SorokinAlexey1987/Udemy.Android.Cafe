@@ -11,4 +11,16 @@
     <string name="sugar">Сахар</string>
     <string name="milk">Молоко</string>
     <string name="lemon">Лимон</string>
+    <string name="choose_drink_type">Выберите тип напитка</string>
+
+    <array name="types_of_tea">
+        <item>Зелёный</item>
+        <item>Чёрный</item>
+    </array>
+
+    <array name="types_of_coffee">
+        <item>Американо</item>
+        <item>Эспрессой</item>
+        <item>Латте</item>
+    </array>
 </resources>
