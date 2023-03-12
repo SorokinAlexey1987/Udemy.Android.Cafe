@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,13 +28,25 @@ public class MainActivity extends AppCompatActivity {
                 String userName = editTextName.getText().toString().trim();
                 String password = editTextPassword.getText().toString().trim();
 
-                Intent intent = new Intent(MainActivity.this, MakeOrderActivity.class);
-                intent.putExtra("userName", userName);
-                startActivity(intent);
+                if (userName.isEmpty() || password.isEmpty()) {
+                    Toast.makeText(
+                            MainActivity.this,
+                            getString(R.string.error_fields_empty),
+                            Toast.LENGTH_SHORT
+                    ).show();
+                } else {
+                    launchNextScreen(userName);
+                }
+
             }
         });
     }
 
+    private void launchNextScreen(String userName) {
+        Intent intent = new Intent(MainActivity.this, MakeOrderActivity.class);
+        intent.putExtra("userName", userName);
+        startActivity(intent);
+    }
     private void initViews() {
         editTextName = findViewById(R.id.editTextName);
         editTextPassword = findViewById(R.id.editTextPassword);
