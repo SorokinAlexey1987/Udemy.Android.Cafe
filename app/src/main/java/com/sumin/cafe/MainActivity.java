@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 if (userName.isEmpty() || password.isEmpty()) {
                     Toast.makeText(
                             MainActivity.this,
-                            getString(R.string.error_fields_empty),
+                            R.string.error_fields_empty,
                             Toast.LENGTH_SHORT
                     ).show();
                 } else {
@@ -43,8 +43,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void launchNextScreen(String userName) {
-        Intent intent = new Intent(MainActivity.this, MakeOrderActivity.class);
-        intent.putExtra("userName", userName);
+        Intent intent = MakeOrderActivity.newIntent(this, userName);
         startActivity(intent);
     }
     private void initViews() {
