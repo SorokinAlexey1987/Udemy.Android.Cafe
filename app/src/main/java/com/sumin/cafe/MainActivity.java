@@ -24,7 +24,12 @@ public class MainActivity extends AppCompatActivity {
         buttonSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String userName = editTextName.getText().toString();
+                String userName = editTextName.getText().toString().trim();
+                String password = editTextPassword.getText().toString().trim();
+
+                Intent intent = new Intent(MainActivity.this, MakeOrderActivity.class);
+                intent.putExtra("userName", userName);
+                startActivity(intent);
             }
         });
     }
