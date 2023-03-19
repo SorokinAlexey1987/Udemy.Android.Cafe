@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 public class MakeOrderActivity extends AppCompatActivity {
 
+    private static final String EXTRA_USER_NAME = "userName";
     private TextView textViewGreetings;
     private TextView textViewAdditives;
 
@@ -30,12 +31,33 @@ public class MakeOrderActivity extends AppCompatActivity {
 
     private Button buttonMakeOrder;
 
+    private String drink;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_order);
         initViews();
+        setupUserName();
+        radioGroupDrinks.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int id) {
+                if (id == radioButtonTea.getId()) {
+                    onUserChoseTea();
+                } else if (id == radioButtonCoffee.getId()) {
+                    onUserChoseCoffee();
+                }
+            }
+        });
+    }
+
+    private void onUserChoseTea() {
+        drink = getString(R.string.tea);
+    }
+
+    private void onUserChoseCoffee() {
+        drink = getString(R.string.coffee);
     }
 
     private void initViews() {
@@ -56,9 +78,15 @@ public class MakeOrderActivity extends AppCompatActivity {
         buttonMakeOrder = findViewById(R.id.buttonMakeOrder);
     }
 
+    private void setupUserName() {
+        String userName = getIntent().getStringExtra(EXTRA_USER_NAME);
+        String greetings = getString(R.string.greetings, userName);
+        textViewGreetings.setText(greetings);
+    }
+
     public static Intent newIntent(Context context, String userName) {
         Intent intent = new Intent(context, MakeOrderActivity.class);
-        intent.putExtra("userName", userName);
+        intent.putExtra(EXTRA_USER_NAME, userName);
         return intent;
     }
 }
